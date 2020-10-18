@@ -17,3 +17,8 @@ The Technical Requirements for this project can be found [here](https://backend.
 ### Evaluation
 
 Evaluation details can be found [here](https://backend.turing.io/module3/projects/rails_engine/evaluation)
+
+
+### Models Schema Diagram
+
+![schema diagram](schema_diagram.png)
