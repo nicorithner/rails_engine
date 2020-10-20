@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Expose Restful API endpoints for both Items" do
+describe "Expose Restful API endpoints for Items" do
   it "Sends a list of items" do
     create_list(:item, 3)
 
