@@ -33,12 +33,21 @@ describe "Expose Restful API endpoints for both Items" do
   it "can get one item by its id" do
     item = create(:item)
     get "/api/v1/items/#{item.id}"
-
-    json = JSON.parse(response.body)
-
+    rsp = JSON.parse(response.body, symbolize_names: true)
+    
     expect(response).to be_successful
-    expect(json).to be_instance_of(Hash)
-    expect(json.keys.first).to eq("data")
-    expect(json["data"]["id"]).to eq("#{item.id}")
+    expect(rsp).to be_instance_of(Hash)
+    expect(rsp.keys.first).to eq(:data)
+    expect(rsp[:data][:id]).to eq("#{item.id}")
+  end
+  
+  it "can create a new item" do
+    item_params = { "name": "Item_1", "description": "Item's description", "merchant_id": "12345", "unit_price": "10.05" }
+    post "/api/v1/items", params: {item: item_params}
+    
+    rsp = JSON.parse(response.body, symbolize_names: true)
+    expect(response).to be_successful
+    expect(rsp[:data][:attributes][:name]).to eq(item_params[:name])
+    expect(rsp[:data][:attributes][:description]).to eq(item_params[:description])
   end
 end
