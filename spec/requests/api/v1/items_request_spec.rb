@@ -50,4 +50,23 @@ describe "Expose Restful API endpoints for both Items" do
     expect(rsp[:data][:attributes][:name]).to eq(item_params[:name])
     expect(rsp[:data][:attributes][:description]).to eq(item_params[:description])
   end
+
+  it "can update an item" do
+    item = create(:item)
+    item_name = Item.first.name
+    item_params = { "name": 'Table Saw' }
+    
+    patch "/api/v1/items/#{item.id}", params: {item: item_params}
+    
+    rsp = JSON.parse(response.body, symbolize_names: true)
+    
+    item = Item.find_by(id: item.id)
+    
+    updated_item = rsp[:data]
+    expect(updated_item[:attributes][:name]).to eq(item.name)
+    expect(updated_item[:attributes][:description]).to eq(item.description)
+    expect(updated_item[:attributes][:unit_price]).to eq(item.unit_price)
+    expect(updated_item[:attributes][:merchant_id]).to eq(item.merchant_id)
+    expect(updated_item[:attributes][:name]).to_not eq(item_name)
+  end
 end
