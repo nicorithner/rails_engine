@@ -69,4 +69,12 @@ describe "Expose Restful API endpoints for both Items" do
     expect(updated_item[:attributes][:merchant_id]).to eq(item.merchant_id)
     expect(updated_item[:attributes][:name]).to_not eq(item_name)
   end
+
+  it 'can destroy an item' do
+    item = create(:item)
+    expect(Item.count).to eq(1)
+    delete "/api/v1/items/#{item.id}"
+    expect(response).to be_successful
+    expect(Item.count).to eq(0)
+  end
 end
