@@ -29,4 +29,16 @@ describe "Expose Restful API endpoints for both Items" do
       expect(item[:attributes][:unit_price]).to be_an(Float)
     end
   end
+
+  it "can get one item by its id" do
+    item = create(:item)
+    get "/api/v1/items/#{item.id}"
+
+    json = JSON.parse(response.body)
+
+    expect(response).to be_successful
+    expect(json).to be_instance_of(Hash)
+    expect(json.keys.first).to eq("data")
+    expect(json["data"]["id"]).to eq("#{item.id}")
+  end
 end
