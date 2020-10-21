@@ -21,11 +21,11 @@ describe "search items endpoints" do
     end
   end
 
-  it 'can find an items that contain a fragment, case insensitive' do
+  it 'can find an item that contain a fragment, case insensitive' do
     merchant1 = Merchant.create!({ name: "Schiller" })
-    item1 = { name: "Haru_1", description: "Item's description", merchant_id: 12345, unit_price: 10.05 }
-    item2 = { name: "Haru_2", description: "Item's description", merchant_id: 12345, unit_price: 10.05 }
-    item3 = { name: "Not_It", description: "Item's description", merchant_id: 12345, unit_price: 10.05 }
+    item1 = merchant1.items.create!({ name: "Haru_1", description: "Item's description",  unit_price: 10.05 })
+    item2 = merchant1.items.create!({ name: "Haru_2", description: "Item's description",  unit_price: 10.05 })
+    item3 = merchant1.items.create!({ name: "Not_It", description: "Item's description",  unit_price: 10.05 })
     
     get '/api/v1/items/find?name=haru'
     json = JSON.parse(response.body, symbolize_names: true)
