@@ -42,7 +42,7 @@ describe "Expose Restful API endpoints for Items" do
   end
   
   it "can create a new item" do
-    item_params = { "name": "Item_1", "description": "Item's description", "merchant_id": "12345", "unit_price": "10.05" }
+    item_params = { name: "Item_1", description: "Item's description", merchant_id: 12345, unit_price: 10.05 }
     post "/api/v1/items", params: {item: item_params}
     
     rsp = JSON.parse(response.body, symbolize_names: true)
