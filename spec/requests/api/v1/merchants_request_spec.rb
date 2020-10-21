@@ -37,7 +37,7 @@ describe "Expose Restful API endpoints for merchants" do
 
   it "can create a new merchant" do
     merchant_params = { "name": "Merchant Name"}
-    post "/api/v1/merchants", params: {merchant: merchant_params}
+    post "/api/v1/merchants", params: merchant_params
     
     rsp = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
@@ -49,7 +49,7 @@ describe "Expose Restful API endpoints for merchants" do
     merchant_name = Merchant.first.name
     merchant_params = { "name": 'Another Name' }
     
-    patch "/api/v1/merchants/#{merchant.id}", params: {merchant: merchant_params}
+    patch "/api/v1/merchants/#{merchant.id}", params: merchant_params
     
     rsp = JSON.parse(response.body, symbolize_names: true)
     
