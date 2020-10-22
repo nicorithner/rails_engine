@@ -4,16 +4,16 @@
 
 ## Summary
 
+The 'Rails Engine/ Rails Drive' project is an exercise on exposing APIs.
+The exercise requires using TDD to drive the process and we were provided an spec harness test in 'Rails Drive'.
+The most challenging part was figuring out how to complete some of these processes without the proper know-how (no lessons provided). This made things very challenging but allowed me to expose areas that need strengthening. 
+
+#### Document Navigation
   - [Turing's Project Scope](#Scope)
   - [Getting Started](#getting-started)
   - [Runing the tests](#running-the-tests)
   - [Deployment](#deployment)
-  - [Built With](#built-with)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Authors](#authors)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+  - [Code Samples](#code-samples)
 
 
 
@@ -64,7 +64,7 @@ We'll be running this app in:
     - Ruby 2.5.3
     - Rails 5.2.4.3
 
-### Installing
+### Deployment
 
 ### Install the Engine
 
@@ -139,10 +139,33 @@ Then, begin your query to the API by using the following root URI on all queries
 ```
 http://localhost:3000/api/v1/
 ```
+And append whatever request to the end that you desire. A non-exhaustive list of various endpoints that can be queried with a GET request are as follows:
+
+* merchants
+* items
+* items/:id
+* items/find?name=<value>
+* merchants/find_all?created_at=2012-03-27 14:53:59 UTC
+* merchants/most_revenue?quantity=x where x is the number of merchants that should be returned
+* merchants/most_items?quantity=x where x is the number of merchants that should be returned
+
+## Code samples
+
+### Tests Example
+
+![tests example](sample_test.png)
 
 ### Schema
 
 ![schema diagram](schema_diagram.png)
+
+### Routes
+
+![routes screenshot](routes.png)
+
+### Active Record Queries Example
+
+![queries example](ActiveRecordQueries.png)
 
 
 
