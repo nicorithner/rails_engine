@@ -14,12 +14,7 @@ The most challenging part was figuring out how to complete some of these process
   - [Runing the tests](#running-the-tests)
   - [Deployment](#deployment)
   - [Code Samples](#code-samples)
-
-
-
-
-
-
+  - [Reference Sources](#reference-sources)
 
 
 <div style="background: green;color: white; padding: 2em; margin-bottom: 2em; margin-top: 2em">
@@ -148,6 +143,30 @@ And append whatever request to the end that you desire. A non-exhaustive list of
 * merchants/find_all?created_at=2012-03-27 14:53:59 UTC
 * merchants/most_revenue?quantity=x where x is the number of merchants that should be returned
 * merchants/most_items?quantity=x where x is the number of merchants that should be returned
+
+
+## Reference Sources
+
+Here I am listing some links to articles and documentation I used to work on this project
+
+### Gems
+* [Rubygems.org](https://rubygems.org/)
+* [Faker](https://github.com/faker-ruby)
+* [FactoryBot Docs](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md)
+* [Jsonapi-serializer](https://github.com/jsonapi-serializer/jsonapi-serializer#installation)
+
+### CSV
+How to import csv data to the database:
+ - [Turing CSV Lesson](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module1/lessons/csv_walkthrough.md)
+ - ["importing Massive Data Into Rails](https://mattboldt.com/importing-massive-data-into-rails/)
+* [How to seed your Rails DB from CSV](https://mikapeltomaa.com/how-to-seed-your-rails-db-from-csv/)
+* [How to use ActiveRecord to reset the Primary Key sequences in PostgreSQL](https://rubyinrails.com/2019/07/12/postgres-reset-sequence-to-max-id-in-rails/)
+* [ActiveRecord Query Methods](https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-select)
+
+### Other Tools
+* [dbdiagram](https://dbdiagram.io/d/)
+
+
 
 ## Code samples
 
