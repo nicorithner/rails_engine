@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       #=== merchants
       get 'merchants/find_all', to: "merchant_search#index"
       get 'merchants/find', to: "merchant_search#show"
+      get '/merchants/most_revenue', to: 'merchant_search#most_revenue'
       get '/merchants/:id/items', to: 'merchant_items#index'
       resources :merchants
       
