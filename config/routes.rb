@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get '/merchants/:id/items', to: 'merchant_items#index'
       resources :merchants
       
+      #=== revenues
+      get '/revenue', to: 'revenue#date_range'
     end
   end
 end
