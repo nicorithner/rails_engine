@@ -67,12 +67,9 @@ RSpec.describe 'Business Intelligence' do
       expect(json[:data][4][:id]).to be_a(String)
     end
 
-    #== Incomplete task
-    xit 'can get revenue between two dates' do
+    it 'can get revenue between two dates' do
       get '/api/v1/revenue?start=2020-01-01&end=2020-05-05'
       json = JSON.parse(response.body, symbolize_names: true)
-      # binding.pry
-
       expect(json[:data][:attributes][:revenue].to_f.round(2)).to eq(950.0)
     end
   end
