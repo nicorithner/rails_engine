@@ -4,8 +4,8 @@ class Api::V1::ItemsSearchController < ApplicationController
       items = Item.find_by_name(params[:name])
       render json: ItemSerializer.new(items)
     end
-    
   end
+
   def show
     if params[:name]
       item = Item.find_by_name(params[:name]).first
