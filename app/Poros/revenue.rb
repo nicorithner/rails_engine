@@ -4,5 +4,4 @@ class Revenue
     @revenue = total
     @id = nil
   end
-  
 end

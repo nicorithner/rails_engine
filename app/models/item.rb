@@ -5,6 +5,6 @@ class Item < ApplicationRecord
   has_many :transactions, through: :invoices
 
   def self.find_by_name(name)
-    items = Item.where("lower(name) LIKE ?", "%" + name.downcase + "%")
+    Item.where("lower(name) LIKE ?", "%" + name.downcase + "%")
   end
 end

@@ -4,8 +4,8 @@ class Api::V1::MerchantSearchController < ApplicationController
       merchants = Merchant.find_by_name(params[:name])
       render json: MerchantSerializer.new(merchants)
     end
-    
   end
+
   def show
     if params[:name]
       merchant = Merchant.find_by_name(params[:name]).first

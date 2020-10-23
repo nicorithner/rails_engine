@@ -20,7 +20,8 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   private
-    def merchant_params
-      params.permit(:id, :name)
-    end
+
+  def merchant_params
+    params.permit(:id, :name)
+  end
 end
